@@ -1,17 +1,18 @@
 <%= form_for @user, :url => login_create_path(@user)  do |f| %>
 
-  <div class="field">
-    <%= f.label :user_id %>
-    <%= f.text_field :user_id %>
+  <div class="field",:id = 'login_user'>
+    <%= f.label :user_id, :id => 'login_user'%>
+    <%= f.text_field :user_id, :id => 'login_user' %>
   </div>
-  <div class="field">
-    <%= f.label :email %>
-    <%= f.text_field :email %>
+  <div class="field", :id = 'login_email'>
+    <%= f.label :email, :id => 'login_email' %>
+    <%= f.text_field :email, :id => 'login_email' %>
   </div>
   <div class="actions">
-    <%= f.submit 'Login to my my account' %>
+    <%= f.submit 'Login to my my account', :id =>'login_submit'%>
   </div>
 
 <% end %>
 
-    <%= link_to "sign-up for an account", new_user_path %>
+    <%= link_to "sign-up for an account", new_user_path, :id =>'signup' %>
+    

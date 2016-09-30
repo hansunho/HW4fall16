@@ -11,18 +11,18 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :user_id %><br>
-    <%= f.text_field :user_id %>
+  <div class="field", :id = 'signup_user'>
+    <%= f.label :user_id, :id => 'signup_user' %><br>
+    <%= f.text_field :user_id, :id => 'signup_user' %>
   </div>
-  <div class="field">
-    <%= f.label :email %><br>
-    <%= f.text_field :email %>
+  <div class="field", :id = 'signup_email'>
+    <%= f.label :email, :id => 'signup_email' %><br>
+    <%= f.text_field :email, :id => 'signup_email' %>
   </div>
  
-  <div class="actions">
+  <div class="actions",:id = 'signup_create'>
     
-    <%= f.submit 'Create my account' %>
+    <%= f.submit 'Create my account', :id =>'signup_create' %>
     
   </div>
 <% end %>
