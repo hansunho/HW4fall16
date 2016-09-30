@@ -1,0 +1,17 @@
+<%= form_for @user, :url => login_create_path(@user)  do |f| %>
+
+  <div class="field">
+    <%= f.label :user_id %>
+    <%= f.text_field :user_id %>
+  </div>
+  <div class="field">
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+  </div>
+  <div class="actions">
+    <%= f.submit 'Login to my my account' %>
+  </div>
+
+<% end %>
+
+    <%= link_to "sign-up for an account", new_user_path %>

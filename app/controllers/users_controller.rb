@@ -28,7 +28,7 @@ class UsersController < ApplicationController
     @user= User.create_user!(user_params)
      if(@user) then 
     respond_to do |format|
-        format.html { redirect_to root_path, notice: "Welcome #{@user.user_id}. Your account has been created" }
+        format.html { redirect_to login_path, notice: "Welcome #{@user.user_id}. Your account has been created" }
         format.json { render :show, status: :created, location: @user }
     end
     else
