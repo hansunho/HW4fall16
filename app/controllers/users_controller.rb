@@ -24,16 +24,16 @@ class UsersController < ApplicationController
   # POST /users
   # POST /users.json
   def create
-    @user = User.new(user_params)
-
+    
+    @user= User.create_user!(user_params)
+     if(@user) then 
     respond_to do |format|
-      if @user.save
-        format.html { redirect_to @user, notice: 'User was successfully created.' }
+        format.html { redirect_to root_path, notice: "Welcome #{@user.user_id}. Your account has been created" }
         format.json { render :show, status: :created, location: @user }
-      else
-        format.html { render :new }
-        format.json { render json: @user.errors, status: :unprocessable_entity }
-      end
+    end
+    else
+      flash[:notice] = "Sorry, this user-id is taken. Try again"
+      redirect_to new_user_path
     end
   end
 
